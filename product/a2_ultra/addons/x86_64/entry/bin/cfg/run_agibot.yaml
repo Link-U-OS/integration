@@ -16,7 +16,7 @@ process_manager:
   agi_user_gid: ${USER_GID}
   env_file: "${AGIBOT_HOME}/agibot/software/v0/entry/bin/cfg/env.yaml"
   default_apps:
-    ["iox_roudi", "hal_ethercat", "recordbag0", "health_monitor0", "mc"]
+    ["iox_roudi", "recordbag0", "health_monitor0", "mc"]
 
   apps:
     "poweroff0":
@@ -34,22 +34,12 @@ process_manager:
       sudo: true
 
     "mc":
-      path: "${AGIBOT_HOME}/agibot/software/v0/rl_deploy/scripts/start_rl_control_real.sh"
+      path: "${AGIBOT_HOME}/agibot/software/v0/rl_deploy/deploy_assets/scripts/start_rl_control_real.sh"
       sudo: false
 
     "health_monitor0":
       path: "${AGIBOT_HOME}/agibot/software/v0/scripts/health_monitor/start_health_monitor.sh"
       sudo: false
-
-    "hal_ethercat":
-      path: "${AGIBOT_HOME}/agibot/software/v0/hal_ethercat/scripts/hal_ethercat/start_hal_ethercat.sh"
-      sudo: false
-      env:
-        LOG_PATH: "${AGIBOT_HOME}/agibot/log/hal_ethercat"
-      restart:
-        policy: "Never"
-        delay_ms: 10000
-        max_retries: -1
 
     "recordbag0":
       path: "${AGIBOT_HOME}/agibot/software/v0/scripts/record_playback/record_playback.sh"

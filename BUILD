@@ -421,11 +421,6 @@ extract_zip_to_tar(
     zip_file = ["@rl_deploy_zip//file"],
 )
 
-extract_zip_to_tar(
-    name = "hal_ethercat",
-    zip_file = ["@hal_ethercat_zip//file"],
-)
-
 pkg_tar(
     name = "all_plugins_tar",
     srcs = [
@@ -460,7 +455,6 @@ filegroup(
     name = "x86_64_a2_ultra_tar_list",
     srcs = [
         ":rl_deploy_tar",
-        ":hal_ethercat_tar",
         ":ros2_package_tar_list",
         "@aimrt_comm//:record_playback_module_tar",
         "@@aimrt_health_monitor//:health_monitor_tar",
