@@ -343,18 +343,18 @@ alias(
 
 
 repackage_tar(
-    name = "aima_protocol_ros2_package_tar",
+    name = "aimrt_protocol_ros2_package_tar",
     srcs = select({
         "@integration//toolchains/platforms:is_aarch64": ["@aimrt_protocol//:ros2_package_aarch64"],
         "//conditions:default": ["@aimrt_protocol//:ros2_package_x86"],
     }),
-    prefix = "share/ros2_package/aima_protocol_ros2_package",
+    prefix = "share/ros2_package/aimrt_protocol_ros2_package",
 )
 
 filegroup(
     name = "ros2_package_tar_list",
     srcs = [
-        ":aima_protocol_ros2_package_tar",
+        ":aimrt_protocol_ros2_package_tar",
     ],
 )
 
