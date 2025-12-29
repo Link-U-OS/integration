@@ -1,0 +1,10 @@
+[Unit]
+Description=子时钟ptp服务
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/agibot/software/v0/entry/bin/start_slave_time_sync.sh
+
+[Install]
+WantedBy=multi-user.target

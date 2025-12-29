@@ -1,0 +1,28 @@
+[general]
+version = 1
+
+[[segment]]
+
+[[segment.mempool]]
+size = 1024
+count = 10000
+
+[[segment.mempool]]
+size = 2048
+count = 50000
+
+[[segment.mempool]]
+size = 4096
+count = 50000
+
+[[segment.mempool]]
+size = 16384
+count = 1000
+
+[[segment.mempool]]
+size = 8847488
+count = 200
+
+[[segment.mempool]]
+size = 18388616
+count = 100

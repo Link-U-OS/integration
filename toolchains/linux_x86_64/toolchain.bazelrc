@@ -1,0 +1,7 @@
+# These are basic settings for Bazel to use the toolchain.
+# There may be additional settings needed.
+build:linux_x86_64 --incompatible_enable_cc_toolchain_resolution
+build:linux_x86_64 --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:linux_x86_64 --extra_toolchains=@integration//toolchains/linux_x86_64/config:cc-toolchain
+build:linux_x86_64 --platforms=@integration//toolchains/linux_x86_64/config:target_platform
+build:linux_x86_64 --host_platform=@integration//toolchains/linux_x86_64/config:host_platform

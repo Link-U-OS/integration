@@ -1,0 +1,15 @@
+[Unit]
+Description=Agibot Disk Monitor Service
+After=network.target agibot_check_and_install.service
+Requires=agibot_check_and_install.service
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /etc/systemd/system/agibot/scripts/disk_monitor/main.py
+WorkingDirectory=/etc/systemd/system/agibot/scripts/disk_monitor
+Restart=on-failure
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Agibot Check and Install Service
+
+[Service]
+LimitCORE=infinity
+Type=oneshot
+ExecStart=/usr/local/bin/agibot_check_and_install.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

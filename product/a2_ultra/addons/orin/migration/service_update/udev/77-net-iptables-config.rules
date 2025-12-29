@@ -1,0 +1,8 @@
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", KERNELS=="0001:01:00.0", ATTR{type}=="1", KERNEL=="wlan*", NAME="ap_orin"
+
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", KERNELS=="2-3:1.5", ATTR{type}=="1", KERNEL=="usb*", NAME="modem_5G",\
+RUN+="/usr/sbin/sysctl -w net.ipv4.ip_forward=1",\
+RUN+="/usr/sbin/iptables -t nat -D POSTROUTING -s 192.168.2.74 -o modem_5G -j MASQUERADE",\
+RUN+="/usr/sbin/iptables -t nat -D POSTROUTING -s 192.168.2.5 -o modem_5G -j MASQUERADE",\
+RUN+="/usr/sbin/iptables -t nat -A POSTROUTING -s 192.168.2.74 -o modem_5G -j MASQUERADE",\
+RUN+="/usr/sbin/iptables -t nat -A POSTROUTING -s 192.168.2.5 -o modem_5G -j MASQUERADE"

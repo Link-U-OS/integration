@@ -1,0 +1,1 @@
+SUBSYSTEM=="rtc", ATTR{name}=="nvvrs-pseq-rtc nvvrs-pseq-rtc", SYMLINK="rtc_agibot"

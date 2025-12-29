@@ -1,0 +1,23 @@
+network:
+  ethernets:
+    enp2s0f0:
+      addresses:
+      - 198.18.1.4/24
+      dhcp4: false
+      dhcp6: false
+    enp2s0f1:
+      dhcp4: true
+      dhcp6: true
+    enp2s0f2:
+      dhcp4: true
+      dhcp6: true
+    enp2s0f3:
+      dhcp4: true
+      dhcp6: true
+    enp3s0:
+      addresses:
+      - 192.168.100.100/24
+      dhcp4: false
+      dhcp6: false
+  renderer: NetworkManager
+  version: 2

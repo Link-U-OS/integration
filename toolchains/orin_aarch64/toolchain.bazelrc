@@ -1,0 +1,7 @@
+# These are basic settings for Bazel to use the toolchain.
+# There may be additional settings needed.
+build:orin_aarch64 --incompatible_enable_cc_toolchain_resolution
+build:orin_aarch64 --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+build:orin_aarch64 --extra_toolchains=@integration//toolchains/orin_aarch64/config:cc-toolchain
+build:orin_aarch64 --platforms=@integration//toolchains/orin_aarch64/config:target_platform
+build:orin_aarch64 --host_platform=@integration//toolchains/orin_aarch64/config:host_platform

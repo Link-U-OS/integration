@@ -1,0 +1,17 @@
+[Unit]
+Description=AgiBot AP Service
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=root
+ExecStartPre=/bin/sleep 30
+ExecStart=/opt/ap/ap.sh
+Restart=on-failure
+RestartSec=30s
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=multi-user.target

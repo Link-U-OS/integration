@@ -1,0 +1,78 @@
+worker_info:
+  aima_req_worker:
+    thread_num: 2
+    listen_ip: "127.0.0.1"
+    listen_port: 50080
+
+  node_control_worker:
+    thread_num: 1
+    master_node: true
+    listen_ip: "192.168.100.100"
+    listen_port: 56999
+
+process_manager:
+  work_dir: "${AGIBOT_HOME:-}/agibot/sys/proc"
+  agi_user_uid: ${USER_UID}
+  agi_user_gid: ${USER_GID}
+  env_file: "${AGIBOT_HOME}/agibot/software/v0/entry/bin/cfg/env.yaml"
+  default_apps: [
+      "iox_roudi",
+      "recordbag1",
+      "health_monitor1",
+      "tz_camera",
+      "hal_lidar",
+      "hal_d415",
+      "hal_dcw2",
+      "viz"
+
+    ]
+
+  apps:
+    "poweroff1":
+      path: "${AGIBOT_HOME}/agibot/software/v0/entry/bin/poweroff.sh"
+      sudo: true
+
+    "iox_roudi":
+      path: "${AGIBOT_HOME}/agibot/software/v0/entry/bin/run_iox_roudi.sh"
+      sudo: false
+      stdout: "${AGIBOT_HOME}/agibot/log/iox_roudi/iox_roudi.log"
+      stderror: "${AGIBOT_HOME}/agibot/log/iox_roudi/iox_roudi.log"
+
+    "reboot1":
+      path: "${AGIBOT_HOME}/agibot/software/v0/entry/bin/reboot.sh"
+      sudo: true
+
+    "health_monitor1":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/health_monitor/start_health_monitor.sh"
+      sudo: false
+
+    "recordbag1":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/record_playback/record_playback.sh"
+      sudo: false
+      restart:
+        policy: "Never"
+        delay_ms: 10000
+        max_retries: -1
+
+    "tz_camera":
+      path: "bash"
+      args:
+        ["${AGIBOT_HOME}/agibot/software/v0/scripts/tzcamera/start_tzcamera.sh"]
+      sudo: false
+      env:
+        LOG_PATH: "${AGIBOT_HOME}/agibot/log/camera"
+
+    "hal_lidar":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/mid360lidar/start_mid360lidar.sh"
+      sudo: false
+
+    "hal_d415":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/hal_d415/start_hal_d415.sh"
+      sudo: false
+    "hal_dcw2":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/hal_dcw2/start_hal_dcw2.sh"
+      sudo: false
+
+    "viz":
+      path: "${AGIBOT_HOME}/agibot/software/v0/scripts/viz/start_viz_module.sh"
+      sudo: false

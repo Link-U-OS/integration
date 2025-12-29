@@ -1,0 +1,86 @@
+formatVersion: v1
+type: deployment
+labels:
+  robot: A2_ULTRA
+spec:
+  - app: hal_ethercat
+    executable: aimrt_main_hal
+    processor: i5-1350P
+    net:
+      http:
+        - listen_port: 56421
+          is_net_plugin: True
+      udp:
+        - listen_port: 56421
+          is_net_plugin: True
+  - app: recordbag0
+    executable: aimrte-tool-record_playback
+    processor: i5-1350P
+    net:
+      http:
+        - listen_port: 50593
+          is_net_plugin: True
+  - app: tz_camera
+    executable: tzcamera
+    processor: Cortex-A78AE
+    net:
+      http:
+        - listen_port: 59324
+          is_net_plugin: True
+      udp:
+        - listen_port: 58324
+          is_net_plugin: True
+  - app: viz
+    executable: aimrt_main
+    processor: Cortex-A78AE
+    net:
+      http:
+        - listen_port: 50090
+          is_net_plugin: True
+  - app: recordbag1
+    executable: aimrte-tool-record_playback
+    processor: Cortex-A78AE
+    net:
+      http:
+        - listen_port: 50593
+          is_net_plugin: True
+  - app: hal_lidar
+    executable: mid360lidar
+    processor: Cortex-A78AE
+    net:
+      http:
+        - listen_port: 52114
+          is_net_plugin: True
+      udp:
+        - listen_port: 54114
+          is_net_plugin: True
+        - listen_port: 56101
+          is_net_plugin: False
+        - listen_port: 56201
+          is_net_plugin: False
+        - listen_port: 56301
+          is_net_plugin: False
+        - listen_port: 56401
+          is_net_plugin: False
+        - listen_port: 56501
+          is_net_plugin: False
+  - app: health_monitor0
+    executable: health_monitor
+    processor: i5-1350P
+    net:
+      http:
+        - listen_port: 50588
+          is_net_plugin: True
+      udp:
+        - listen_port: 51588
+          is_net_plugin: True
+  - app: health_monitor1
+    executable: health_monitor
+    processor: Cortex-A78AE
+    net:
+      http:
+        - listen_port: 50588
+          is_net_plugin: True
+      udp:
+        - listen_port: 51588
+          is_net_plugin: True

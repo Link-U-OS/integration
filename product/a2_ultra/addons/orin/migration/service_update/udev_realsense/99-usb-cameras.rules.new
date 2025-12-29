@@ -1,0 +1,14 @@
+# Intel RealSense Depth Camera 415 - Interface 1.0 (video8-video11)
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.0", ENV{DEVLINKS}=="*video-index0*", SYMLINK+="usbcam0"
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.0", ENV{DEVLINKS}=="*video-index1*", SYMLINK+="usbcam1"
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.0", ENV{DEVLINKS}=="*video-index2*", SYMLINK+="usbcam2"
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.0", ENV{DEVLINKS}=="*video-index3*", SYMLINK+="usbcam3"
+
+# Intel RealSense Depth Camera 415 - Interface 1.3 (video12-video13)
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.3", ENV{DEVLINKS}=="*video-index0*", SYMLINK+="usbcam4"
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="8086", ENV{ID_MODEL_ID}=="0ad3", ENV{ID_PATH}=="platform-3610000.usb-usb-0:2:1.3", ENV{DEVLINKS}=="*video-index1*", SYMLINK+="usbcam5"
+
+# Orbbec DaBai DCW2 RGB Camera (video14-video15)
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="2bc5", ENV{ID_MODEL_ID}=="0561", ENV{ID_PATH}=="platform-14160000.pcie-pci-0004:01:00.0-usb-0:3.3:1.0", ENV{DEVLINKS}=="*video-index0*", SYMLINK+="usbcam6"
+SUBSYSTEM=="video4linux", ENV{ID_VENDOR_ID}=="2bc5", ENV{ID_MODEL_ID}=="0561", ENV{ID_PATH}=="platform-14160000.pcie-pci-0004:01:00.0-usb-0:3.3:1.0", ENV{DEVLINKS}=="*video-index1*", SYMLINK+="usbcam7"
+

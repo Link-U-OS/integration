@@ -1,0 +1,3 @@
+#让agi用户可以访问gpio
+SUBSYSTEM=="tty", KERNEL=="ttyTHS[0-9]*", GROUP="agi", MODE="0660"
+SUBSYSTEM=="gpio", KERNEL=="gpiochip[0-9]*", GROUP="agi", MODE="0660"

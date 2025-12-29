@@ -1,0 +1,4 @@
+external/nvidia_toolchain/aarch64-buildroot-linux-gnu/include/c++/11.3.0
+external/nvidia_toolchain/aarch64-buildroot-linux-gnu/sysroot/usr/include
+external/nvidia_toolchain/lib/gcc/aarch64-buildroot-linux-gnu/11.3.0/include
+external/nvidia_toolchain/lib/gcc/aarch64-buildroot-linux-gnu/11.3.0/include-fixed

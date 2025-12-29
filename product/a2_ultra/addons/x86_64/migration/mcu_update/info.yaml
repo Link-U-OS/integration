@@ -1,0 +1,90 @@
+# MCU 升级配置
+# 历史原因，仍然保留这个顺序
+mcu:
+  # MCU 升级顺序
+  order:
+    - "mcu4"
+    - "mcu2"
+    - "mcu3"
+    - "mcu1"
+  
+  # MCU 对应的二进制文件映射
+  map:
+    - name: "mcu1"
+      bin: "main_head_control_a2_release-0.7.6.ota"
+    - name: "mcu2"
+      bin: "main_leg_control_a2_release-0.6.12.ota"
+    - name: "mcu3"
+      bin:  "main_leg_control_a2_0.6.6_mcu3.ota"
+    - name: "mcu4"
+      bin: "main_arm_control_a2_release-0.8.4.ota"
+
+  # MCU 升级代码映射
+  code:
+    - name: mcu1
+      id: '00658100'
+    - name: mcu2
+      id: '00358100'
+    - name: mcu3
+      id: '00358100'
+    - name: mcu4
+      id: '00758100'
+  
+  # MCU 版本信息
+  version:
+    mcu1: "0.7.6"
+    mcu2: "0.6.12"
+    mcu3: "0.6.6"
+    mcu4: "0.8.4"
+
+# XML 升级配置
+xml_upgrade:
+  # XML 升级程序名称
+  # 要求由嵌入式提供，在目录中
+  exe_name: "eeprom_tool"
+  
+  # XML 升级顺序
+  order:
+    - "xml1"
+    - "xml2"
+    - "xml3"
+    - "xml4"
+  
+  # XML 文件映射列表
+  map:
+    - ["xml1", "main_head_a2_ethercat_v5.hex", "00000005"]
+    - ["xml2", "main_leg_a2_ethercat_v3.hex", "00000003"]
+    - ["xml3", "main_leg_a2_ethercat_v3.hex", "00000003"]
+    - ["xml4", "main_arm_a2_ethercat_v3.hex", "00000003"]
+
+# 电源板配置
+power_board_t3:
+  is_upgrade: true
+  master_id: "mcu1"
+  slave_id: "1"
+  code: "00658100"
+  bin: "powerboard-0.7.18.ota"
+  version: "0.7.18"
+
+#嵌入式复用链路板卡配置 
+multiplex_link_p1:
+ #升级顺序 设备地址
+  order:
+    - 1003
+    - 1012
+  #设备地址:ota包名
+  map: 
+    - dev_addr: 1003
+      bin: multiplex_link_a2_release-0.8.5.ota
+    - dev_addr: 1012
+      bin: powerboard-mcu2-0.7.18.ota
+  #当前需要升级的ota包版本号 设备地址:版本号
+  version:
+    1003: "0.8.5"
+    1012: "0.7.18"
+  
+  power_board_p1:
+    is_upgrade: true
+    dev_addr: 1011
+    bin: powerboard-0.7.18.ota
+    version: "0.7.18"  

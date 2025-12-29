@@ -1,0 +1,23 @@
+[Unit]
+Description=EM App
+After=network.target agibot_check_and_install.service
+Requires=agibot_check_and_install.service
+
+[Service]
+LimitCORE=infinity
+# Environment=AGIBOT_HOME=/agibot
+# EnvironmentFile=-/agibot/Environment
+ExecStart=/agibot/software/v0/entry/bin/run_agibot.sh
+# RuntimeDirectory=/agibot/
+Restart=always
+RestartSec=5
+User=root
+Group=root
+# Type=forking
+Type=simple
+# RemainAfterExit=yes
+# KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+

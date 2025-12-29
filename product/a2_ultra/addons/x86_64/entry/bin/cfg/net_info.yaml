@@ -1,0 +1,9 @@
+ethercat:
+  mcu1: eth_ecat
+  mcu2: eth_ecat
+  mcu3: eth_ecat
+  mcu4: eth_ecat
+  xml1: eth_ecat
+  xml2: eth_ecat
+  xml3: eth_ecat
+  xml4: eth_ecat

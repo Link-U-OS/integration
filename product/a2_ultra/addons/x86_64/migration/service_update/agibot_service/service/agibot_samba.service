@@ -1,0 +1,14 @@
+[Unit]
+Description=Agibot Samba Service
+After=network.target agibot_check_and_install.service
+Requires=agibot_check_and_install.service
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/etc/systemd/system/agibot/samba/start_samba.sh
+WorkingDirectory=/etc/systemd/system/agibot/samba
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

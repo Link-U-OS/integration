@@ -1,0 +1,12 @@
+[Unit]
+Description=Aim Master XSet Service
+After=agibot_ui.service
+
+[Service]
+Type=oneshot
+User=agi
+Group=agi
+ExecStart=xset s off && xset dpms 0 0 0 
+
+[Install]
+WantedBy=multi-user.target

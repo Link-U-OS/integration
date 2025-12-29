@@ -1,0 +1,6 @@
+.cursorrules
+.marscode/*
+.env
+.idea
+.vscode
+bazel-*

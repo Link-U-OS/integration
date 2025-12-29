@@ -1,0 +1,1 @@
+python3 /agibot/software/v0/entry/bin/reboot_ipc.py

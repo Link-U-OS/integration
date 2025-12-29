@@ -1,0 +1,26 @@
+From 887f8b22a405300c2a788dbdb5720228d8c53638 Mon Sep 17 00:00:00 2001
+From: ggmsunshine 250811275+ggmsunshine@users.noreply.github.com
+Date: Wed, 11 Jun 2025 15:52:45 +0800
+Subject: [PATCH] fix eigen_half_convert_to_Float16
+
+---
+ include/eigen3/Eigen/src/Core/arch/AVX512/PacketMathFP16.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/include/eigen3/Eigen/src/Core/arch/AVX512/PacketMathFP16.h b/include/eigen3/Eigen/src/Core/arch/AVX512/PacketMathFP16.h
+index 52fee1e..5b76887 100644
+--- a/include/eigen3/Eigen/src/Core/arch/AVX512/PacketMathFP16.h
++++ b/include/eigen3/Eigen/src/Core/arch/AVX512/PacketMathFP16.h
+@@ -112,7 +112,8 @@ struct unpacket_traits<Packet8h> {
+ 
+ template <>
+ EIGEN_STRONG_INLINE Packet32h pset1<Packet32h>(const Eigen::half& from) {
+-  return _mm512_set1_ph(static_cast<_Float16>(from));
++  float temp = static_cast<float>(from);
++  return _mm512_set1_ph(static_cast<_Float16>(temp));
+ }
+ 
+ // pset1frombits
+-- 
+2.34.1
+

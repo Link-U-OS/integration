@@ -1,0 +1,58 @@
+# +------------------------------------------------------------+
+# | Startup Options                                            |
+# +------------------------------------------------------------+
+startup --batch_cpu_scheduling
+
+startup --host_jvm_args=-XX:-UseParallelGC
+
+# +------------------------------------------------------------+
+# | Build Configurations                                       |
+# +------------------------------------------------------------+
+common --enable_bzlmod=false
+
+# Do not show warnings from external dependencies.
+build --output_filter="^//"
+
+build --show_timestamps
+
+build --copt=-fPIC
+build --cxxopt=-fPIC
+
+# enable incompatible Python init mode
+build --incompatible_default_to_explicit_init_py
+# enable implementation_deps on cc_library targets
+build --experimental_cc_implementation_deps
+
+build --compilation_mode=opt
+build --cxxopt="-std=c++20"
+build --host_cxxopt="-std=c++20"
+build --copt -DAIMRT_BUILD_WITH_PROTOBUF
+build --copt -DAIMRT_USE_PROTOC_PYTHON_PLUGIN
+build --copt -DAIMRT_BUILD_WITH_ROS2
+build --define USE_FMT_LIB=on
+build --cxxopt="-fpermissive"
+
+# Configuration for x86_64 architecture
+build:x86_64 --extra_toolchains=@integration//toolchains/linux_x86_64/config:cc-toolchain
+build:x86_64 --action_env=AGIBOT_PLATFORM="x86_64"
+
+# Configuration for orin_aarch64 architecture
+build:orin_aarch64 --extra_toolchains=@integration//toolchains/orin_aarch64/config:cc-toolchain
+build:orin_aarch64 --platforms=@integration//toolchains/orin_aarch64/config:target_platform
+build:orin_aarch64 --cxxopt="-fpermissive"
+build:orin_aarch64 --copt -Wno-error=deprecated-declarations
+build:orin_aarch64 --cxxopt -Wno-error=overloaded-virtual
+build:orin_aarch64 --copt -Wno-error=ignored-qualifiers
+build:orin_aarch64 --define orin_aarch64=true
+build:orin_aarch64 --action_env=AGIBOT_PLATFORM="orin_aarch64"
+build:orin_aarch64 --copt -DORIN_AARCH64
+build:orin_aarch64 --action_env=ARCH=arm64
+build:orin_aarch64 --copt -O3
+build:orin_aarch64 --copt -DNDEBUG
+build:orin_aarch64 --copt -g0
+build:orin_aarch64 --@rules_cuda//cuda:archs=compute_87:compute_87,sm_87
+build:orin_aarch64 --action_env=CUDA_HOME=/opt/nvidia/orin_sysroot/usr/local/cuda-12.2
+build:orin_aarch64 --action_env=CUDA_PATH=/opt/nvidia/orin_sysroot/usr/local/cuda-12.2
+
+# Configuration to build from source commit.
+build:commit --action_env=AGIBOT_FROM_COMMIT="True"

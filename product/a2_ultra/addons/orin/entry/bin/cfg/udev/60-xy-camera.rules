@@ -1,0 +1,1 @@
+SUBSYSTEM=="video4linux", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="d880", ENV{ID_V4L_CAPABILITIES}==":capture:*", SYMLINK+="agibot-camera-xinying-%E{ID_SERIAL_SHORT}", GROUP="video", MODE="0666"

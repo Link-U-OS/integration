@@ -1,0 +1,13 @@
+[Unit]
+Description=cfg orin to enable orin user x86 wifi
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/orin_use_x86_wifi/orin_cfg.sh
+Restart=no
+User=root
+TimeoutStartSec=infinity
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+interface: ["eth_ecat", "eth_ecat2"] # ethercat 网口名
+ethercat:
+  mcu1: ["eth_ecat", "eth_ecat2"]
+  mcu2: ["eth_ecat", "eth_ecat2"]
+  mcu3: ["eth_ecat", "eth_ecat2"]
+  mcu4: ["eth_ecat", "eth_ecat2"]
+  xml1: ["eth_ecat", "eth_ecat2"]
+  xml2: ["eth_ecat", "eth_ecat2"]
+  xml3: ["eth_ecat", "eth_ecat2"]
+  xml4: ["eth_ecat", "eth_ecat2"]

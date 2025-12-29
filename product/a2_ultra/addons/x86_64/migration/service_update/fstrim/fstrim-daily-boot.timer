@@ -1,0 +1,11 @@
+[Unit]
+Description=Run fstrim once per day (first boot only)
+
+[Timer]
+OnBootSec=1min
+OnUnitInactiveSec=1day
+AccuracySec=1h
+Persistent=false
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,39 @@
+From 5c8f3eb41f0bc296990a3445d2e03f834dc9d950 Mon Sep 17 00:00:00 2001
+From: ggmsunshine 250811275+ggmsunshine@users.noreply.github.com
+Date: Thu, 15 May 2025 10:31:57 +0800
+Subject: [PATCH] fix rclcpp time mismatch
+
+---
+ src/interactive_marker_server.cpp | 2 +-
+ src/message_context.cpp           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/interactive_marker_server.cpp b/src/interactive_marker_server.cpp
+index 0a16db4..d3feef3 100644
+--- a/src/interactive_marker_server.cpp
++++ b/src/interactive_marker_server.cpp
+@@ -411,7 +411,7 @@ void InteractiveMarkerServer::processFeedback(
+   marker_context.last_client_id = feedback->client_id;
+ 
+   if (feedback->event_type == visualization_msgs::msg::InteractiveMarkerFeedback::POSE_UPDATE) {
+-    if (marker_context.int_marker.header.stamp == rclcpp::Time()) {
++    if (rclcpp::Time(marker_context.int_marker.header.stamp) == rclcpp::Time()) {
+       // keep the old header
+       doSetPose(
+         pending_updates_.find(
+diff --git a/src/message_context.cpp b/src/message_context.cpp
+index cdce1e1..785f4d0 100644
+--- a/src/message_context.cpp
++++ b/src/message_context.cpp
+@@ -89,7 +89,7 @@ bool MessageContext<MsgT>::getTransform(
+         header.frame_id.c_str(), target_frame_.c_str(), rclcpp::Time(header.stamp).seconds());
+ 
+       // if timestamp is given, transform message into target frame
+-      if (header.stamp != rclcpp::Time(0)) {
++      if (rclcpp::Time(header.stamp) != rclcpp::Time(0)) {
+         geometry_msgs::msg::PoseStamped pose_stamped_msg;
+         pose_stamped_msg.header = header;
+         pose_stamped_msg.pose = pose_msg;
+-- 
+2.34.1
+
