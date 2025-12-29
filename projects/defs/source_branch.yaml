@@ -6,14 +6,14 @@ aimrt_comm:
   git:
     branch: main
     remote: git@github.com:Link-U-OS/aimrt_comm.git
-aima_protocol:
+aimrt_protocol:
   git:
     branch: main
-    remote: git@github.com:Link-U-OS/aima_protocol.git
-aima_sensor:
+    remote: git@github.com:Link-U-OS/aimrt_protocol.git
+aimrt_sensor:
   git:
     branch: main
-    remote: git@github.com:Link-U-OS/aima_sensor.git
+    remote: git@github.com:Link-U-OS/aimrt_sensor.git
 aimrt_health_monitor:
   git:
     branch: main

@@ -1,6 +1,6 @@
 # 代码仓管理
 
-代码仓依赖指编译时所需的各个代码仓库，包括中间件仓库（如 aimrt）、协议仓库（如 aimrt_protocol）、公共接口仓库（如 aimrt_comm）、算法仓库（如 aima_sensor）和 Bazel ros2 仓（如 rules_ros2）。
+代码仓依赖指编译时所需的各个代码仓库，包括中间件仓库（如 aimrt）、协议仓库（如 aimrt_protocol）、公共接口仓库（如 aimrt_comm）、算法仓库（如 aimrt_sensor）和 Bazel ros2 仓（如 rules_ros2）。
 
 ## 版本定义
 

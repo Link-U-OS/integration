@@ -345,8 +345,8 @@ alias(
 repackage_tar(
     name = "aima_protocol_ros2_package_tar",
     srcs = select({
-        "@integration//toolchains/platforms:is_aarch64": ["@aima_protocol//:ros2_package_aarch64"],
-        "//conditions:default": ["@aima_protocol//:ros2_package_x86"],
+        "@integration//toolchains/platforms:is_aarch64": ["@aimrt_protocol//:ros2_package_aarch64"],
+        "//conditions:default": ["@aimrt_protocol//:ros2_package_x86"],
     }),
     prefix = "share/ros2_package/aima_protocol_ros2_package",
 )
@@ -480,7 +480,7 @@ filegroup(
     name = "orin_a2_ultra_tar_list",
     srcs = [
         ":ros2_package_tar_list",
-        "@aima_sensor//:tzcamera_tar",
+        "@aimrt_sensor//:tzcamera_tar",
         "@aimrt_comm//:record_playback_module_tar",
         "@aimrt_health_monitor//:health_monitor_tar",
         "@aimrt_process_manager//:process_manager_tar",

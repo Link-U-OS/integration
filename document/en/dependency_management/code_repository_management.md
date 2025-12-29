@@ -1,6 +1,6 @@
 # Code Repository Management
 
-Code repository dependencies refer to various code repositories required at compile time, including middleware repositories (such as aimrt), protocol repositories (such as aimrt_protocol), common interface repositories (such as aimrt_comm), algorithm repositories (such as aima_sensor), and Bazel ros2 repositories (such as rules_ros2).
+Code repository dependencies refer to various code repositories required at compile time, including middleware repositories (such as aimrt), protocol repositories (such as aimrt_protocol), common interface repositories (such as aimrt_comm), algorithm repositories (such as aimrt_sensor), and Bazel ros2 repositories (such as rules_ros2).
 
 ## Version Definition
 
