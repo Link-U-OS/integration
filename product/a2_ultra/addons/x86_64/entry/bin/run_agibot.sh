@@ -70,9 +70,9 @@ bash ./start_slave_time_sync.sh
 bash ./capture_net.sh
 
 # 设置程序net高权，用于ethercat通信
-if ! getcap ${AGIBOT_HOME}/agibot/software/v0/bin/aimrt_main_hal | grep "cap_net_raw=eip" >/dev/null; then
+if ! getcap ${AGIBOT_HOME}/agibot/software/v0/hal_ethercat/bin/aimrt_main_hal | grep "cap_net_raw=eip" >/dev/null; then
   echo "assign advanced permissions to the program cap_cet_raw."
-  sudo setcap cap_net_raw=eip ${AGIBOT_HOME}/agibot/software/v0/bin/aimrt_main_hal
+  sudo setcap cap_net_raw=eip ${AGIBOT_HOME}/agibot/software/v0/hal_ethercat/bin/aimrt_main_hal
 fi
 
 # 开启atop录制
