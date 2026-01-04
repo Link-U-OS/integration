@@ -1,45 +1,40 @@
 aimrt:
   git:
-    commit: 6386885d134bdf12777b15e7a9130c3c0f48c07c
+    commit: 4f29b89248f6473803b1ba8881c4a1a50a71ba64
     remote: git@github.com:Link-U-OS/aimrt.git
-    shallow_since: 1761999534 +0800
+    shallow_since: 1766987329 +0800
 aimrt_comm:
   git:
-    commit: be69021c91144f24aca73dafaa7dcf966ab5cb3b
+    commit: 9ec05594d2108e1d9e38579a7387a14776239f77
     remote: git@github.com:Link-U-OS/aimrt_comm.git
-    shallow_since: 1761996619 +0800
+    shallow_since: 1766999499 +0800
 aimrt_protocol:
   git:
-    commit: 754fd819786ecb2be4218d12f3c4b158e02deb10
+    commit: 03263afbbe05b224e2525c70c7ec74afb119cecc
     remote: git@github.com:Link-U-OS/aimrt_protocol.git
-    shallow_since: 1761996854 +0800
+    shallow_since: 1766999620 +0800
 aimrt_sensor:
   git:
-    commit: 7ea1a4dad2ca8452142851228696b174603c7541
+    commit: be30e88dc7d7582e7c1e487cdd5ad7a32ac8bce3
     remote: git@github.com:Link-U-OS/aimrt_sensor.git
-    shallow_since: 1761997579 +0800
+    shallow_since: 1767170156 +0800
 aimrt_health_monitor:
   git:
-    commit: d0c4125ea8a827e68b9d4e8d31952fc1bad81b16
+    commit: 5c5515fde80d37e7302e119b7b900fac74555433
     remote: git@github.com:Link-U-OS/aimrt_health_monitor.git
-    shallow_since: 1763969469 +0800
-aimrt_motion_control:
-  git:
-    commit: 9f5911b1e9e957627f5fab7bd0e673e9b2ce9b2b
-    remote: git@github.com:Link-U-OS/aimrt_motion_control.git
-    shallow_since: 1761998270 +0800
+    shallow_since: 1766999550 +0800
 aimrt_viz:
   git:
-    commit: 15d0b65c712fb098a9fb9fd867d626dbe90c83a5
+    commit: ec9e4c67d100b554c29b0a189fa2354f27caf233
     remote: git@github.com:Link-U-OS/aimrt_viz.git
-    shallow_since: 1761998932 +0800
+    shallow_since: 1767074547 +0800
 aimrt_process_manager:
   git:
-    commit: 78d1628020427230f2627793ec384196c96729d6
+    commit: f7611ad2eeaf56a20ef6ee3fb23c6c3e3c815955
     remote: git@github.com:Link-U-OS/aimrt_process_manager.git
-    shallow_since: 1761998377 +0800
+    shallow_since: 1766999581 +0800
 com_github_mvukov_rules_ros2:
   git:
-    commit: b11f2ee27f1c53654f7689a14a086efaf436e33f
+    commit: cfc47340bc07a9760d1c12788a6846e8d9ebbe63
     remote: git@github.com:Link-U-OS/rules_ros2.git
-    shallow_since: 1761999014 +0800
+    shallow_since: 1766977162 +0800

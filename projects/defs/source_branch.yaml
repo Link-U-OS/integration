@@ -18,10 +18,6 @@ aimrt_health_monitor:
   git:
     branch: main
     remote: git@github.com:Link-U-OS/aimrt_health_monitor.git
-aimrt_motion_control:
-  git:
-    branch: main
-    remote: git@github.com:Link-U-OS/aimrt_motion_control.git
 aimrt_viz:
   git:
     branch: main

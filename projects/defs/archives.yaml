@@ -1,4 +1,4 @@
 rl_deploy_zip:
   http_file: 
-    url: https://github.com/Link-U-OS/rl_deploy/releases/download/20251229_ec6f5fb/rl_deploy_20251229_ec6f5fb.zip
-    sha256: 1c58987a2d3215acdc256b32d7349c597c1f36f2d59b5741042c0c76dbe9fe99
+    url: https://github.com/Link-U-OS/rl_deploy/releases/download/20260104_ec6f5fb/rl_deploy_20260104_ec6f5fb.zip
+    sha256: 7876ff3e863f46e71f74851d247987f78103a2e20f156284e3c590066186c059
